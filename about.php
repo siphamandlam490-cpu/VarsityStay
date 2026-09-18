@@ -290,6 +290,123 @@
 
     </section>
 
+<!-- ======================================
+     STUDENT LIFE VIDEO SECTION
+======================================= -->
+
+<!-- ======================================
+     STUDENT LIFE VIDEO SECTION
+======================================= -->
+
+<section class="video-section section">
+
+    <div class="container">
+
+        <!-- Section heading -->
+        <div class="section-heading">
+
+            <h2>Explore Student Life</h2>
+
+            <p>
+                Get a closer look at university life,
+                student accommodation and the student experience.
+            </p>
+
+        </div>
+
+
+        <!-- Container holding all three videos -->
+        <div class="video-grid">
+
+
+            <!-- ======================================
+                 VIDEO 1 - VUT
+            ======================================= -->
+
+            <div class="video-card">
+
+                <iframe
+                    src="https://www.youtube.com/embed/1WBCQjUBM9g"
+                    title="Vaal University of Technology"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>Vaal University of Technology</h3>
+
+                <p>
+                    Learn more about the university
+                    and the student environment.
+                </p>
+
+            </div>
+
+
+            <!-- ======================================
+                 VIDEO 2 - CAMPUS LIFE
+            ======================================= -->
+
+            <div class="video-card">
+
+                <iframe
+                    src="YOUR_SECOND_EMBED_LINK_HERE"
+                    title="Student Campus Life"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>Student Campus Life</h3>
+
+                <p>
+                    Discover more about campus facilities,
+                    student activities and university life.
+                </p>
+
+            </div>
+
+
+            <!-- ======================================
+                 VIDEO 3 - ACCOMMODATION
+            ======================================= -->
+
+            <div class="video-card">
+
+                <iframe
+                    src="YOUR_THIRD_EMBED_LINK_HERE"
+                    title="Student Accommodation Guide"
+                    allowfullscreen>
+                </iframe>
+
+                <h3>Student Accommodation Guide</h3>
+
+                <p>
+                    Learn more about choosing suitable
+                    accommodation as a university student.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+                <h3>Vaal University of Technology</h3>
+
+                <p>
+                    Learn more about the university
+                    and the student environment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 
     <!-- CALL TO ACTION -->
     <section class="cta-section">

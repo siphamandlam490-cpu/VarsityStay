@@ -60,23 +60,54 @@
         </div>
 
 
-        <div>
+       <div>
 
-            <h3>Useful Links</h3>
+    <!-- Useful external links -->
+    <h3>Useful Links</h3>
 
-            <a href="https://www.vut.ac.za/"
-               target="_blank">
-                Vaal University of Technology
-            </a>
+    <a href="https://www.vut.ac.za/"
+       target="_blank"
+       rel="noopener noreferrer">
+        Vaal University of Technology
+    </a>
 
-            <br>
+    <br>
 
-            <a href="https://www.nsfas.org.za/"
-               target="_blank">
-                NSFAS
-            </a>
+    <a href="https://www.nsfas.org.za/"
+       target="_blank"
+       rel="noopener noreferrer">
+        NSFAS
+    </a>
 
-        </div>
+
+    <!-- Social media links -->
+    <h3 class="social-heading">
+        Follow Us
+    </h3>
+
+    <div class="social-links">
+
+        <a href="https://www.facebook.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+            Facebook
+        </a>
+
+        <a href="https://www.instagram.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+            Instagram
+        </a>
+
+        <a href="https://www.linkedin.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+            LinkedIn
+        </a>
+
+    </div>
+
+</div>
 
     </div>
 

@@ -1146,3 +1146,487 @@ tbody tr:hover {
     }
 
 }
+
+
+
+/* =====================================
+   CONTACT PAGE
+===================================== */
+
+/* Main contact layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+
+/* =====================================
+   CONTACT INFORMATION
+===================================== */
+
+.contact-info h2,
+.contact-form-container h2 {
+    color: #172554;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+.contact-info > p {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+/* Individual contact information cards */
+.contact-item {
+    background: #f8fafc;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+}
+
+
+.contact-item h3 {
+    color: #172554;
+    margin-bottom: 5px;
+}
+
+
+.contact-item p {
+    color: #555;
+}
+
+
+.contact-item a {
+    color: #2563eb;
+}
+
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   CONTACT FORM
+===================================== */
+
+.contact-form-container {
+    background: #f8fafc;
+    padding: 35px;
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* Space between each form field */
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+/* Form labels */
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #172554;
+}
+
+
+/* Inputs, dropdown and message box */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: white;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* Blue border when a user clicks a field */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+/* Prevent the message box becoming too small */
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 140px;
+}
+
+
+/* Contact form button */
+.contact-form-container .btn {
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+/* =====================================
+   CONTACT PAGE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 800px) {
+
+    /* Change the two columns into one column */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    /* Reduce form padding on small phones */
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+
+
+    .contact-info h2,
+    .contact-form-container h2 {
+        font-size: 28px;
+    }
+
+}
+
+
+
+/* =====================================
+   CONTACT FORM MESSAGES
+===================================== */
+
+/* Successful form submission */
+.form-success {
+    background: #dcfce7;
+    color: #166534;
+
+    border: 1px solid #86efac;
+
+    padding: 14px 16px;
+    margin-bottom: 20px;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+}
+
+
+/* PHP validation errors */
+.form-errors {
+    background: #fee2e2;
+    color: #991b1b;
+
+    border: 1px solid #fca5a5;
+
+    padding: 14px 16px;
+    margin-bottom: 20px;
+
+    border-radius: 6px;
+}
+
+
+/* Space for the error heading */
+.form-errors strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+/* Show error items clearly */
+.form-errors ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+
+/* Space between error messages */
+.form-errors li {
+    margin-bottom: 5px;
+}
+
+
+
+
+/* =====================================
+   BOOKING PAGE
+===================================== */
+
+/* Main booking layout */
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+
+/* =====================================
+   BOOKING INFORMATION
+===================================== */
+
+.booking-info h2,
+.booking-form-container h2 {
+    color: #172554;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+
+.booking-info > p {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+/* Booking information cards */
+.booking-note {
+    background: #f8fafc;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+}
+
+
+.booking-note h3 {
+    color: #172554;
+    margin-bottom: 6px;
+}
+
+
+.booking-note p {
+    color: #555;
+}
+
+
+/* =====================================
+   BOOKING FORM
+===================================== */
+
+.booking-form-container {
+    background: #f8fafc;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* Booking form button */
+.booking-form-container .btn {
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+/* =====================================
+   BOOKING PAGE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 800px) {
+
+    /* Change the two columns into one */
+    .booking-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    /* Reduce form padding on small phones */
+    .booking-form-container {
+        padding: 25px 20px;
+    }
+
+
+    .booking-info h2,
+    .booking-form-container h2 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* =====================================
+   FOOTER SOCIAL LINKS
+===================================== */
+
+.social-heading {
+    margin-top: 22px;
+}
+
+
+/* Place social links underneath each other */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* Social media link hover effect */
+.social-links a {
+    color: #dbeafe;
+    transition: 0.3s;
+}
+
+
+.social-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+/* =====================================
+   VIDEO SECTION
+===================================== */
+
+.video-section {
+    background: #f8fafc;
+}
+
+
+/* Video cards container */
+/* Display the student videos in a responsive grid */
+.video-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* Individual video card */
+.video-card {
+    background: white;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* YouTube video */
+/* Keep embedded videos in normal YouTube 16:9 format */
+.video-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+
+    border: none;
+    display: block;
+}
+
+
+/* Video title */
+.video-card h3 {
+    color: #172554;
+
+    margin:
+        20px
+        20px
+        8px;
+}
+
+
+/* Video description */
+.video-card p {
+    color: #555;
+
+    margin:
+        0
+        20px
+        25px;
+}
+
+
+/* Responsive video */
+@media (max-width: 700px) {
+
+    .video-card iframe {
+        height: 250px;
+    }
+
+}/* Two videos per row on tablets */
+@media (max-width: 1000px) {
+
+    .video-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* One video per row on phones */
+@media (max-width: 700px) {
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .video-card iframe {
+        height: 250px;
+    }
+
+}

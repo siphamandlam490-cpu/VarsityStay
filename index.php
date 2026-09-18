@@ -155,12 +155,12 @@
                         R2 800 / month
                     </p>
 
-                    <a href="booking.php"
-                       class="btn primary-btn">
+                    <a href="booking.php?room=Campus+View+Residence"
+   class="btn primary-btn">
 
-                        Book Now
+    Book Now
 
-                    </a>
+</a>
 
                 </div>
 
@@ -188,12 +188,12 @@
                         R2 300 / month
                     </p>
 
-                    <a href="booking.php"
-                       class="btn primary-btn">
+                    <a href="booking.php?room=Student+Haven"
+   class="btn primary-btn">
 
-                        Book Now
+    Book Now
 
-                    </a>
+</a>
 
                 </div>
 
@@ -221,12 +221,12 @@
                         R3 000 / month
                     </p>
 
-                    <a href="booking.php"
-                       class="btn primary-btn">
+                   <a href="booking.php?room=Varsity+Lodge"
+   class="btn primary-btn">
 
-                        Book Now
+    Book Now
 
-                    </a>
+</a>
 
                 </div>
 
