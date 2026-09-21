@@ -10,6 +10,79 @@ $errors = [];
 // Success message
 $successMessage = "";
 
+// ======================================
+// FORM LANGUAGE
+// ======================================
+
+// English is the default language
+$language = $_POST["language"] ?? "en";
+
+// Only allow languages supported by VarsityStay
+if (!in_array($language, ["en", "st"], true)) {
+    $language = "en";
+}
+
+
+// ======================================
+// PHP FORM TRANSLATIONS
+// ======================================
+
+$phpTranslations = [
+
+    // English messages
+    "en" => [
+
+        "nameError" =>
+            "Full name must contain at least 3 characters.",
+
+        "emailError" =>
+            "Please enter a valid email address.",
+
+        "phoneError" =>
+            "Please enter a valid phone number.",
+
+        "subjectError" =>
+            "Please select a valid enquiry type.",
+
+        "messageError" =>
+            "Message must contain at least 10 characters.",
+
+        "success" =>
+            "Thank you! Your message has been received successfully.",
+
+        "errorHeading" =>
+            "Please correct the following:"
+    ],
+
+
+    // Sesotho messages
+    "st" => [
+
+        "nameError" =>
+            "Lebitso le feletseng le tlameha ho ba le bonyane litlhaku tse 3.",
+
+        "emailError" =>
+            "Ka kopo kenya aterese e nepahetseng ea imeile.",
+
+        "phoneError" =>
+            "Ka kopo kenya nomoro e nepahetseng ea mohala.",
+
+        "subjectError" =>
+            "Ka kopo khetha mofuta o nepahetseng oa potso.",
+
+        "messageError" =>
+            "Molaetsa o tlameha ho ba le bonyane litlhaku tse 10.",
+
+        "success" =>
+            "Kea leboha! Molaetsa oa hao o amohetsoe ka katleho.",
+
+        "errorHeading" =>
+            "Ka kopo lokisa tse latelang:"
+    ]
+
+];
+
+
 
 // Default values for the form
 $name = "";
@@ -36,8 +109,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (strlen($name) < 3) {
 
-        $errors[] =
-            "Full name must contain at least 3 characters.";
+       $errors[] =
+    $phpTranslations[$language]["nameError"];
 
     }
 
@@ -49,8 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
         $errors[] =
-            "Please enter a valid email address.";
-
+    $phpTranslations[$language]["emailError"];
     }
 
 
@@ -64,8 +136,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         !preg_match('/^[0-9+\s-]{7,15}$/', $phone)
     ) {
 
-        $errors[] =
-            "Please enter a valid phone number.";
+       $errors[] =
+    $phpTranslations[$language]["phoneError"];
 
     }
 
@@ -84,8 +156,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (!in_array($subject, $allowedSubjects)) {
 
-        $errors[] =
-            "Please select a valid enquiry type.";
+      $errors[] =
+    $phpTranslations[$language]["subjectError"];
 
     }
 
@@ -96,29 +168,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (strlen($message) < 10) {
 
-        $errors[] =
-            "Message must contain at least 10 characters.";
+       $errors[] =
+    $phpTranslations[$language]["messageError"];
 
     }
 
 
-    // ======================================
-    // SUCCESS
-    // ======================================
+  
+    
+// ======================================
+// SUCCESS
+// ======================================
 
-    if (empty($errors)) {
+if (empty($errors)) {
 
-        $successMessage =
-            "Thank you! Your message has been received successfully.";
+   $successMessage =
+    $phpTranslations[$language]["success"];
 
-        // Clear the form after successful submission
-        $name = "";
-        $email = "";
-        $phone = "";
-        $subject = "";
-        $message = "";
+    // Clear the form after successful submission
+    $name = "";
+    $email = "";
+    $phone = "";
+    $subject = "";
+    $message = "";
 
-    }
+}
+ 
+
 
 }
 
@@ -136,12 +212,15 @@ include 'includes/header.php';
     <section class="page-hero">
         <div class="container">
 
-            <h1>Contact VarsityStay</h1>
-
-            <p>
-                Have a question about student accommodation?
-                Send us a message and we will assist you.
-            </p>
+           <!-- Contact page heading -->
+<h1 data-i18n="contactHeroTitle">
+    Contact VarsityStay
+</h1>
+           <!-- Contact page introduction -->
+<p data-i18n="contactHeroText">
+    Have a question about student accommodation?
+    Send us a message and we will assist you.
+</p>
 
         </div>
     </section>
@@ -158,46 +237,54 @@ include 'includes/header.php';
             <!-- CONTACT INFORMATION -->
             <div class="contact-info">
 
-                <h2>Get In Touch</h2>
+               <!-- Contact information heading -->
+<h2 data-i18n="contactInfoTitle">
+    Get In Touch
+</h2>
 
-                <p>
-                    If you need help finding accommodation,
-                    making a booking or using VarsityStay,
-                    feel free to contact us.
-                </p>
+              <!-- Contact information description -->
+<p data-i18n="contactInfoText">
+    If you need help finding accommodation,
+    making a booking or using VarsityStay,
+    feel free to contact us.
+</p>
 
 
                 <div class="contact-item">
 
-                    <h3>📍 Location</h3>
+                 <h3>
+    📍 <span data-i18n="contactLocationTitle">Location</span>
+</h3>
 
-                    <p>
-                        Vanderbijlpark, Gauteng
-                    </p>
+<p>
+    Vanderbijlpark, Gauteng
+</p>
 
                 </div>
 
 
                 <div class="contact-item">
 
-                    <h3>📞 Phone</h3>
+                   <h3>
+    📞 <span data-i18n="contactPhoneTitle">Phone</span>
+</h3>
 
-                    <p>
-                        016 000 0000
-                    </p>
+<p>
+    016 000 0000
+</p>
 
                 </div>
 
 
                 <div class="contact-item">
 
-                    <h3>✉ Email</h3>
+                    <h3>
+    ✉️ <span data-i18n="contactEmailTitle">Email</span>
+</h3>
 
-                    <p>
-                        <a href="mailto:info@varsitystay.co.za">
-                            info@varsitystay.co.za
-                        </a>
-                    </p>
+<p>
+    info@varsitystay.co.za
+</p>
 
                 </div>
 
@@ -209,15 +296,19 @@ include 'includes/header.php';
             ============================== -->
             <div class="contact-form-container">
 
-                <h2>Send Us a Message</h2>
+               <h2 data-i18n="contactFormTitle">
+    Send Us a Message
+</h2>
+
 
 <!-- Display successful submission message -->
 <?php if ($successMessage !== ""): ?>
 
-    <div class="form-success">
+    <div class="form-success"
+         data-i18n="contactSuccessMessage">
 
         <?php
-        echo htmlspecialchars($successMessage);
+            echo htmlspecialchars($successMessage);
         ?>
 
     </div>
@@ -230,7 +321,14 @@ include 'includes/header.php';
 
     <div class="form-errors">
 
-        <strong>Please correct the following:</strong>
+   <strong data-i18n="contactErrorHeading">
+    <?php
+        echo htmlspecialchars(
+            $phpTranslations[$language]["errorHeading"]
+        );
+    ?>
+</strong>
+
 
         <ul>
 
@@ -260,35 +358,54 @@ include 'includes/header.php';
                     method="POST"
                 >
 
+<!-- Store the language selected by the user -->
+<input
+    type="hidden"
+    id="formLanguage"
+    name="language"
+    value="en"
+>
+
+
                     <!-- Full Name -->
                     <div class="form-group">
 
-                        <label for="name">
-                            Full Name
-                        </label>
+                       <!-- Full Name -->
+<label for="name"
+       data-i18n="contactNameLabel">
+    Full Name
+</label>
 
-                        <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Enter your full name"
-                                value="<?php echo htmlspecialchars($name); ?>"
-                                required
-                        >
+                       <!-- Full Name -->
+<input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Enter your full name"
+    data-i18n-placeholder="contactNamePlaceholder"
+    value="<?php echo htmlspecialchars($name); ?>"
+    required
+>
+
 
 
                     <!-- Email Address -->
                     <div class="form-group">
 
-                        <label for="email">
-                            Email Address
-                        </label>
+                       <!-- Email Address -->
+<label for="email"
+       data-i18n="contactEmailLabel">
+    Email Address
+</label>
 
-                      <input
-   type="email"
+
+   <!-- Email Address -->
+<input
+    type="email"
     id="email"
     name="email"
     placeholder="Enter your email address"
+    data-i18n-placeholder="contactEmailPlaceholder"
     value="<?php echo htmlspecialchars($email); ?>"
     required
 >
@@ -299,15 +416,20 @@ include 'includes/header.php';
                     <!-- Phone Number -->
                     <div class="form-group">
 
-                        <label for="phone">
-                            Phone Number
-                        </label>
+                        <!-- Phone Number -->
+<label for="phone"
+       data-i18n="contactPhoneLabel">
+    Phone Number
+</label>
 
-                        <input
+
+              <!-- Phone Number -->
+<input
     type="tel"
     id="phone"
     name="phone"
     placeholder="Enter your phone number"
+    data-i18n-placeholder="contactPhonePlaceholder"
     value="<?php echo htmlspecialchars($phone); ?>"
 >
 
@@ -317,53 +439,65 @@ include 'includes/header.php';
                     <!-- Enquiry Type -->
                     <div class="form-group">
 
-                        <label for="subject">
-                            Enquiry Type
-                        </label>
+                       <!-- Enquiry Type -->
+<label for="subject"
+       data-i18n="contactSubjectLabel">
+    Enquiry Type
+</label>
 
-                        <select
-                            id="subject"
-                            name="subject"
-                            required
-                        >
 
-                            <option value="">
-                                Select an enquiry
-                            </option>
 
-                            <option value="Accommodation">
-                                Accommodation
-                            </option>
+                     <select
+    id="subject"
+    name="subject"
+    required
+>
 
-                            <option value="Booking">
-                                Booking
-                            </option>
+    <option value=""
+            data-i18n="contactSelectEnquiry">
+        Select an enquiry
+    </option>
 
-                            <option value="General">
-                                General Enquiry
-                            </option>
+    <option value="Accommodation"
+            data-i18n="contactOptionAccommodation">
+        Accommodation
+    </option>
 
-                            <option value="Support">
-                                Website Support
-                            </option>
+    <option value="Booking"
+            data-i18n="contactOptionBooking">
+        Booking
+    </option>
 
-                        </select>
+    <option value="General"
+            data-i18n="contactOptionGeneral">
+        General Enquiry
+    </option>
 
+    <option value="Support"
+            data-i18n="contactOptionSupport">
+        Website Support
+    </option>
+
+</select>
                     </div>
 
 
                     <!-- Message -->
                     <div class="form-group">
 
-                        <label for="message">
-                            Message
-                        </label>
+                        <!-- Message -->
+<label for="message"
+       data-i18n="contactMessageLabel">
+    Message
+</label>
 
-                       <textarea
+
+                    <textarea
     id="message"
     name="message"
     rows="6"
     placeholder="Write your message here..."
+    data-i18n-placeholder="contactMessagePlaceholder"
     required
 ><?php echo htmlspecialchars($message); ?></textarea>
 
@@ -371,13 +505,14 @@ include 'includes/header.php';
                     </div>
 
 
-                    <!-- Submit Button -->
-                    <button
-                        type="submit"
-                        class="btn primary-btn"
-                    >
-                        Send Message
-                    </button>
+                   <!-- Submit button -->
+<button
+    type="submit"
+    class="btn primary-btn"
+    data-i18n="contactSendButton"
+>
+    Send Message
+</button>
 
                 </form>
 

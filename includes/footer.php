@@ -4,38 +4,54 @@
 
         <div>
 
-            <h3>VarsityStay</h3>
+          <h3>VarsityStay</h3>
 
-            <p>
-                Helping students find safe,
-                affordable and convenient accommodation.
-            </p>
+<p data-i18n="footerDescription">
+    Helping students find safe,
+    affordable and convenient accommodation.
+</p>
+
 
         </div>
 
 
         <div>
 
-            <h3>Quick Links</h3>
+
+<h3 data-i18n="footerQuickLinks">
+    Quick Links
+</h3>
 
             <ul>
 
                 <li>
-                    <a href="index.php">Home</a>
+                <a href="index.php"
+   data-i18n="navHome">
+    Home
+</a>
                 </li>
 
                 <li>
-                    <a href="about.php">About</a>
+                  <a href="about.php"
+   data-i18n="navAbout">
+    About
+</a>
                 </li>
 
                 <li>
-                    <a href="accommodation.php">
-                        Accommodation
-                    </a>
+                   <a href="accommodation.php"
+   data-i18n="navAccommodation">
+    Accommodation
+</a>
+                    
                 </li>
 
                 <li>
-                    <a href="contact.php">Contact</a>
+                   <a href="contact.php"
+   data-i18n="navContact">
+    Contact
+</a>
+
                 </li>
 
             </ul>
@@ -45,17 +61,28 @@
 
         <div>
 
-            <h3>Contact</h3>
+         <h3 data-i18n="footerContactTitle">
+    Contact
+</h3>
 
-            <p>Vanderbijlpark, Gauteng</p>
+<p>
+    Vanderbijlpark, Gauteng
+</p>
 
-            <p>
-                Phone: 016 000 0000
-            </p>
+<p>
+    <span data-i18n="footerPhone">
+        Phone
+    </span>:
+    016 000 0000
+</p>
 
-            <p>
-                Email: info@varsitystay.co.za
-            </p>
+<p>
+    <span data-i18n="footerEmail">
+        Email
+    </span>:
+    info@varsitystay.co.za
+</p>
+
 
         </div>
 
@@ -63,7 +90,9 @@
        <div>
 
     <!-- Useful external links -->
-    <h3>Useful Links</h3>
+  <h3 data-i18n="footerUsefulLinks">
+    Useful Links
+</h3>
 
     <a href="https://www.vut.ac.za/"
        target="_blank"
@@ -81,9 +110,10 @@
 
 
     <!-- Social media links -->
-    <h3 class="social-heading">
-        Follow Us
-    </h3>
+   <h3 class="social-heading"
+    data-i18n="footerFollowUs">
+    Follow Us
+</h3>
 
     <div class="social-links">
 
@@ -114,10 +144,13 @@
 
     <div class="footer-bottom">
 
-        <p>
-            &copy; <?php echo date("Y"); ?>
-            VarsityStay. All Rights Reserved.
-        </p>
+      <p>
+    &copy; <?php echo date("Y"); ?>
+    VarsityStay.
+    <span data-i18n="footerRights">
+        All Rights Reserved.
+    </span>
+</p>
 
     </div>
 

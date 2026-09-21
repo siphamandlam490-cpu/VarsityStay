@@ -30,60 +30,110 @@
 
         <nav id="navigation">
 
-            <ul class="nav-links">
+    <ul class="nav-links">
+
+        <!-- Home link -->
+        <li>
+            <a href="index.php"
+               data-i18n="navHome">
+                Home
+            </a>
+        </li>
+
+
+        <!-- About link -->
+        <li>
+            <a href="about.php"
+               data-i18n="navAbout">
+                About
+            </a>
+        </li>
+
+
+        <!-- Accommodation dropdown -->
+        <li class="dropdown">
+
+            <a href="accommodation.php">
+
+                <span data-i18n="navAccommodation">
+                    Accommodation
+                </span>
+
+                ▾
+
+            </a>
+
+            <ul class="dropdown-menu">
 
                 <li>
-                    <a href="index.php">Home</a>
-                </li>
-
-                <li>
-                    <a href="about.php">About</a>
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="accommodation.php">
-                        Accommodation ▾
+                    <a href="accommodation.php"
+                       data-i18n="navAllAccommodation">
+                        All Accommodation
                     </a>
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-                            <a href="accommodation.php">
-                                All Accommodation
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="accommodation.php#single">
-                                Single Rooms
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="accommodation.php#sharing">
-                                Sharing Rooms
-                            </a>
-                        </li>
-
-                    </ul>
-
                 </li>
 
                 <li>
-                    <a href="contact.php">Contact</a>
+                    <a href="accommodation.php#single"
+                       data-i18n="navSingleRooms">
+                        Single Rooms
+                    </a>
                 </li>
 
                 <li>
-                    <a href="booking.php"
-                       class="nav-button">
-                        Book Now
+                    <a href="accommodation.php#sharing"
+                       data-i18n="navSharingRooms">
+                        Sharing Rooms
                     </a>
                 </li>
 
             </ul>
 
-        </nav>
+        </li>
+
+
+        <!-- Contact link -->
+        <li>
+            <a href="contact.php"
+               data-i18n="navContact">
+                Contact
+            </a>
+        </li>
+
+
+        <!-- Language selector -->
+        <li>
+
+            <select
+                id="languageSwitcher"
+                class="language-switcher"
+                aria-label="Choose language"
+            >
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="st">
+                    Sesotho
+                </option>
+
+            </select>
+
+        </li>
+
+
+        <!-- Booking link -->
+        <li>
+            <a href="booking.php"
+               class="nav-button"
+               data-i18n="navBook">
+                Book Now
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
 
     </div>
 

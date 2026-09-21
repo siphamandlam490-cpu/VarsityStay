@@ -1630,3 +1630,42 @@ tbody tr:hover {
     }
 
 }
+
+
+
+/* =====================================
+   LANGUAGE SWITCHER
+===================================== */
+
+/* Style the English / Sesotho dropdown */
+.language-switcher {
+    padding: 9px 12px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+
+    background: white;
+    color: #172554;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+/* Blue border when the dropdown is selected */
+.language-switcher:focus {
+    border-color: #2563eb;
+}
+
+
+/* Make language selector fit mobile navigation */
+@media (max-width: 700px) {
+
+    .language-switcher {
+        width: 100%;
+    }
+
+}

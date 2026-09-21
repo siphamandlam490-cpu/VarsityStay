@@ -10,6 +10,77 @@ $bookingErrors = [];
 // Store the success message
 $bookingSuccess = "";
 
+// ======================================
+// BOOKING FORM LANGUAGE
+// ======================================
+
+// English is the default language
+$language = $_POST["language"] ?? "en";
+
+// Only allow supported languages
+if (!in_array($language, ["en", "st"], true)) {
+    $language = "en";
+}
+
+// ======================================
+// BOOKING PHP TRANSLATIONS
+// ======================================
+
+$bookingTranslations = [
+
+    // English
+    "en" => [
+
+        "nameError" =>
+            "Full name must contain at least 3 characters.",
+
+        "emailError" =>
+            "Please enter a valid email address.",
+
+        "phoneError" =>
+            "Please enter a valid phone number.",
+
+        "roomError" =>
+            "Please select valid accommodation.",
+
+        "dateError" =>
+            "Please select your preferred move-in date.",
+
+        "success" =>
+            "Your booking enquiry has been submitted successfully!",
+
+        "errorHeading" =>
+            "Please correct the following:"
+    ],
+
+
+    // Sesotho
+    "st" => [
+
+        "nameError" =>
+            "Lebitso le feletseng le tlameha ho ba le bonyane litlhaku tse 3.",
+
+        "emailError" =>
+            "Ka kopo kenya aterese e nepahetseng ea imeile.",
+
+        "phoneError" =>
+            "Ka kopo kenya nomoro e nepahetseng ea mohala.",
+
+        "roomError" =>
+            "Ka kopo khetha bolulo bo nepahetseng.",
+
+        "dateError" =>
+            "Ka kopo khetha letsatsi leo u ratang ho falla ka lona.",
+
+        "success" =>
+            "Potso ea hao ea pehelo e rometsoe ka katleho!",
+
+        "errorHeading" =>
+            "Ka kopo lokisa tse latelang:"
+    ]
+
+];
+
 
 // Default form values
 $bookingName = "";
@@ -65,8 +136,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (strlen($bookingName) < 3) {
 
-        $bookingErrors[] =
-            "Full name must contain at least 3 characters.";
+       $bookingErrors[] =
+    $bookingTranslations[$language]["nameError"];
 
     }
 
@@ -82,8 +153,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         )
     ) {
 
-        $bookingErrors[] =
-            "Please enter a valid email address.";
+      $bookingErrors[] =
+    $bookingTranslations[$language]["emailError"];
 
     }
 
@@ -99,8 +170,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         )
     ) {
 
-        $bookingErrors[] =
-            "Please enter a valid phone number.";
+       $bookingErrors[] =
+    $bookingTranslations[$language]["phoneError"];
 
     }
 
@@ -127,8 +198,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         )
     ) {
 
-        $bookingErrors[] =
-            "Please select valid accommodation.";
+       $bookingErrors[] =
+    $bookingTranslations[$language]["roomError"];
 
     }
 
@@ -139,8 +210,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($moveDate === "") {
 
-        $bookingErrors[] =
-            "Please select your preferred move-in date.";
+       $bookingErrors[] =
+    $bookingTranslations[$language]["dateError"];
 
     }
 
@@ -151,8 +222,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (empty($bookingErrors)) {
 
-        $bookingSuccess =
-            "Your booking enquiry has been submitted successfully!";
+      $bookingSuccess =
+    $bookingTranslations[$language]["success"];
 
         // Clear form fields after success
         $bookingName = "";
@@ -174,23 +245,25 @@ include 'includes/header.php';
 
 <main>
 
-    <!-- ==============================
-         BOOKING PAGE HERO
-    ============================== -->
-    <section class="page-hero">
+   <!-- ======================================
+     BOOKING PAGE HERO
+======================================= -->
+<section class="page-hero">
 
-        <div class="container">
+    <div class="container">
 
-            <h1>Book Your Accommodation</h1>
+        <h1 data-i18n="bookingHeroTitle">
+            Book Your Accommodation
+        </h1>
 
-            <p>
-                Complete the booking enquiry form below
-                and VarsityStay will assist you.
-            </p>
+        <p data-i18n="bookingHeroText">
+            Complete the booking enquiry form below
+            and VarsityStay will assist you.
+        </p>
 
-        </div>
+    </div>
 
-    </section>
+</section>
 
 
     <!-- ==============================
@@ -201,50 +274,61 @@ include 'includes/header.php';
         <div class="container booking-grid">
 
 
-            <!-- BOOKING INFORMATION -->
-            <div class="booking-info">
+          <!-- BOOKING INFORMATION -->
+<div class="booking-info">
 
-                <h2>Booking Information</h2>
+    <h2 data-i18n="bookingInfoTitle">
+        Booking Information
+    </h2>
 
-                <p>
-                    Complete the form with your details.
-                    Please make sure the information entered
-                    is correct before submitting your enquiry.
-                </p>
-
-
-                <div class="booking-note">
-
-                    <h3>📌 Important</h3>
-
-                    <p>
-                        Submitting this form sends a booking enquiry.
-                        It does not automatically confirm accommodation.
-                    </p>
-
-                </div>
+    <p data-i18n="bookingInfoText">
+        Complete the form with your details.
+        Please make sure the information entered
+        is correct before submitting your enquiry.
+    </p>
 
 
-                <div class="booking-note">
+    <div class="booking-note">
 
-                    <h3>🏠 Accommodation</h3>
+        <h3>
+            📌 <span data-i18n="bookingImportantTitle">
+                Important
+            </span>
+        </h3>
 
-                    <p>
-                        Select the residence or room
-                        you are interested in.
-                    </p>
+        <p data-i18n="bookingImportantText">
+            Submitting this form sends a booking enquiry.
+            It does not automatically confirm accommodation.
+        </p>
 
-                </div>
+    </div>
 
-            </div>
 
+    <div class="booking-note">
+
+        <h3>
+            🏠 <span data-i18n="bookingAccommodationTitle">
+                Accommodation
+            </span>
+        </h3>
+
+        <p data-i18n="bookingAccommodationText">
+            Select the residence or room
+            you are interested in.
+        </p>
+
+    </div>
+
+</div>
 
             <!-- ==============================
                  BOOKING FORM
             ============================== -->
             <div class="booking-form-container">
 
-                <h2>Booking Enquiry</h2>
+               <h2 data-i18n="bookingFormTitle">
+    Booking Enquiry
+</h2>
 
                 <!-- ======================================
      BOOKING SUCCESS MESSAGE
@@ -252,10 +336,11 @@ include 'includes/header.php';
 
 <?php if ($bookingSuccess !== ""): ?>
 
-    <div class="form-success">
+    <div class="form-success"
+         data-i18n="bookingSuccessMessage">
 
         <?php
-        echo htmlspecialchars($bookingSuccess);
+            echo htmlspecialchars($bookingSuccess);
         ?>
 
     </div>
@@ -271,9 +356,15 @@ include 'includes/header.php';
 
     <div class="form-errors">
 
-        <strong>
-            Please correct the following:
-        </strong>
+    <strong data-i18n="bookingErrorHeading">
+    <?php
+        echo htmlspecialchars(
+            $bookingTranslations[$language]["errorHeading"]
+        );
+    ?>
+</strong>
+
+
 
         <ul>
 
@@ -301,36 +392,57 @@ include 'includes/header.php';
                     method="POST"
                 >
 
+                <!-- Store the language selected by the user -->
+<input
+    type="hidden"
+    id="formLanguage"
+    name="language"
+    value="en"
+>
+
+
                     <!-- Full Name -->
                     <div class="form-group">
 
-                        <label for="bookingName">
-                            Full Name
-                        </label>
+                       <label for="bookingName"
+       data-i18n="bookingNameLabel">
+    Full Name
+</label>
 
-                       <input
+
+
+        <!-- Full Name -->
+<input
     type="text"
     id="bookingName"
     name="bookingName"
     placeholder="Enter your full name"
+    data-i18n-placeholder="bookingNamePlaceholder"
     value="<?php echo htmlspecialchars($bookingName); ?>"
     required
 >
+
+
                     </div>
 
 
                     <!-- Email -->
                     <div class="form-group">
 
-                        <label for="bookingEmail">
-                            Email Address
-                        </label>
+                       <label for="bookingEmail"
+       data-i18n="bookingEmailLabel">
+    Email Address
+</label>
 
-                       <input
+
+
+                    <!-- Email Address -->
+<input
     type="email"
     id="bookingEmail"
     name="bookingEmail"
     placeholder="Enter your email address"
+    data-i18n-placeholder="bookingEmailPlaceholder"
     value="<?php echo htmlspecialchars($bookingEmail); ?>"
     required
 >
@@ -341,18 +453,24 @@ include 'includes/header.php';
                     <!-- Phone -->
                     <div class="form-group">
 
-                        <label for="bookingPhone">
-                            Phone Number
-                        </label>
+                        <label for="bookingPhone"
+       data-i18n="bookingPhoneLabel">
+    Phone Number
+</label>
 
-                       <input
+
+
+                    <!-- Phone Number -->
+<input
     type="tel"
     id="bookingPhone"
     name="bookingPhone"
     placeholder="Enter your phone number"
+    data-i18n-placeholder="bookingPhonePlaceholder"
     value="<?php echo htmlspecialchars($bookingPhone); ?>"
     required
 >
+
 
                     </div>
 
@@ -360,9 +478,12 @@ include 'includes/header.php';
                     <!-- Accommodation -->
                     <div class="form-group">
 
-                        <label for="room">
-                            Accommodation
-                        </label>
+                       <label for="room"
+       data-i18n="bookingRoomLabel">
+    Accommodation
+</label>
+
+
 
                         <select
                             id="room"
@@ -370,9 +491,12 @@ include 'includes/header.php';
                             required
                         >
 
-                            <option value="">
-                                Select accommodation
-                            </option>
+                           <option value=""
+        data-i18n="bookingSelectRoom">
+    Select accommodation
+</option>
+
+
 
                             <option
                                 value="Campus View Residence"
@@ -448,9 +572,11 @@ include 'includes/header.php';
                     <!-- Move-in Date -->
                     <div class="form-group">
 
-                        <label for="moveDate">
-                            Preferred Move-in Date
-                        </label>
+                       <label for="moveDate"
+       data-i18n="bookingMoveDateLabel">
+    Preferred Move-in Date
+</label>
+
 
                        <input
     type="date"
@@ -466,27 +592,34 @@ include 'includes/header.php';
                     <!-- Additional Message -->
                     <div class="form-group">
 
-                        <label for="bookingMessage">
-                            Additional Message
-                        </label>
+                       <label for="bookingMessage"
+       data-i18n="bookingMessageLabel">
+    Additional Message
+</label>
 
-                       <textarea
+
+
+                    <textarea
     id="bookingMessage"
     name="bookingMessage"
     rows="5"
     placeholder="Add any additional information..."
+    data-i18n-placeholder="bookingMessagePlaceholder"
 ><?php echo htmlspecialchars($bookingMessage); ?></textarea>
+
 
                     </div>
 
 
                     <!-- Submit Button -->
-                    <button
-                        type="submit"
-                        class="btn primary-btn"
-                    >
-                        Submit Booking Enquiry
-                    </button>
+                   <button
+    type="submit"
+    class="btn primary-btn"
+    data-i18n="bookingSubmitButton"
+>
+    Submit Booking Enquiry
+</button>
+
 
                 </form>
 

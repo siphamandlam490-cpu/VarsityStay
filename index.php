@@ -10,31 +10,32 @@
 
         <div class="container hero-content">
 
-            <h1>
-                Find Your Perfect
-                Student Accommodation
-            </h1>
+           <!-- Home page main heading -->
+<h1   data-i18n="homeHeroTitle">
+       Find Your Perfect Student Accommodation
 
-            <p>
-                Safe, affordable and convenient student
-                accommodation near your university.
-            </p>
+     </h1>
 
-            <div class="hero-buttons">
+            <p data-i18n="homeHeroText">
+    Safe, affordable and convenient student
+    accommodation near your university.
+</p>
 
-                <a href="accommodation.php"
-                   class="btn primary-btn">
+             <a href="accommodation.php"
+   class="btn secondary-dark-btn"
+   data-i18n="homeViewAll">
 
-                    View Accommodation
+    View All Accommodation
 
-                </a>
+</a>
 
-                <a href="about.php"
-                   class="btn secondary-btn">
+<a href="about.php"
+   class="btn secondary-btn"
+   data-i18n="homeLearnMore">
 
-                    Learn More
+    Learn More
 
-                </a>
+</a>
 
             </div>
 
@@ -52,14 +53,16 @@
 
         <div class="section-heading">
 
-            <h2>
-                Why Choose VarsityStay?
-            </h2>
 
-            <p>
-                Finding student accommodation should
-                be simple and stress-free.
-            </p>
+
+           <h2 data-i18n="homeWhyTitle">
+    Why Choose VarsityStay?
+</h2>
+
+<p data-i18n="homeWhyText">
+    Finding student accommodation should
+    be simple and stress-free.
+</p>
 
         </div>
 
@@ -67,44 +70,52 @@
         <div class="feature-grid">
 
 
-            <article class="feature-card">
+            <!-- Trusted Accommodation -->
+<article class="feature-card">
 
-                <h3>🏠 Trusted Accommodation</h3>
+    <h3 data-i18n="homeTrustedTitle">
+        🏠 Trusted Accommodation
+    </h3>
 
-                <p>
-                    Browse student accommodation
-                    with clear room information,
-                    prices and facilities.
-                </p>
+    <p data-i18n="homeTrustedText">
+        Browse student accommodation
+        with clear room information,
+        prices and facilities.
+    </p>
 
-            </article>
-
-
-            <article class="feature-card">
-
-                <h3>💰 Affordable Options</h3>
-
-                <p>
-                    Compare accommodation prices
-                    and choose an option that fits
-                    your student budget.
-                </p>
-
-            </article>
+</article>
 
 
-            <article class="feature-card">
+<!-- Affordable Options -->
+<article class="feature-card">
 
-                <h3>📍 Near Campus</h3>
+    <h3 data-i18n="homeAffordableTitle">
+        💰 Affordable Options
+    </h3>
 
-                <p>
-                    Find accommodation located
-                    conveniently close to university
-                    campuses and transport routes.
-                </p>
+    <p data-i18n="homeAffordableText">
+        Compare accommodation prices
+        and choose an option that fits
+        your student budget.
+    </p>
 
-            </article>
+</article>
 
+
+<!-- Near Campus -->
+<article class="feature-card">
+
+    <h3 data-i18n="homeNearTitle">
+        📍 Near Campus
+    </h3>
+
+    <p data-i18n="homeNearText">
+        Find accommodation located
+        conveniently close to university
+        campuses and transport routes.
+    </p>
+
+</article>
 
         </div>
 
@@ -120,14 +131,15 @@
 
         <div class="section-heading">
 
-            <h2>
-                Featured Accommodation
-            </h2>
+           <h2 data-i18n="homeFeaturedTitle">
+    Featured Accommodation
+</h2>
 
-            <p>
-                Take a look at some of our
-                student accommodation options.
-            </p>
+<p data-i18n="homeFeaturedText">
+    Take a look at some of our
+    student accommodation options.
+</p>
+
 
         </div>
 
@@ -260,33 +272,29 @@
 
         <div class="section-heading">
 
-            <h2>
-                How VarsityStay Works
-            </h2>
+           <h2 data-i18n="homeHowTitle">
+    How VarsityStay Works
+</h2>
 
-        </div>
+<ol class="steps-list">
 
+    <li data-i18n="homeStep1">
+        Browse available accommodation.
+    </li>
 
-        <ol class="steps-list">
+    <li data-i18n="homeStep2">
+        Compare prices and facilities.
+    </li>
 
-            <li>
-                Browse available accommodation.
-            </li>
+    <li data-i18n="homeStep3">
+        Select your preferred room.
+    </li>
 
-            <li>
-                Compare prices and facilities.
-            </li>
+    <li data-i18n="homeStep4">
+        Complete the booking form.
+    </li>
 
-            <li>
-                Select your preferred room.
-            </li>
-
-            <li>
-                Complete the booking form.
-            </li>
-
-        </ol>
-
+</ol>
     </div>
 
 </section>

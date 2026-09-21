@@ -2,56 +2,72 @@
 
 <main>
 
-    <!-- PAGE HEADER -->
-    <section class="page-hero">
+   <!-- ======================================
+     ACCOMMODATION PAGE HERO
+======================================= -->
+<section class="page-hero">
 
-        <div class="container">
+    <div class="container">
 
-            <h1>Student Accommodation</h1>
+        <h1 data-i18n="accHeroTitle">
+            Student Accommodation
+        </h1>
 
-            <p>
-                Find affordable and convenient accommodation
-                that suits your student lifestyle.
-            </p>
+        <p data-i18n="accHeroText">
+            Find affordable and convenient accommodation
+            that suits your student lifestyle.
+        </p>
+
+    </div>
+
+</section>
+
+
+  <!-- ======================================
+     ACCOMMODATION FILTER
+======================================= -->
+<section class="filter-section">
+
+    <div class="container">
+
+        <h2 data-i18n="accFilterTitle">
+            Find Your Room
+        </h2>
+
+        <p data-i18n="accFilterText">
+            Filter accommodation according to your preferred room type.
+        </p>
+
+        <div class="filter-buttons">
+
+            <!-- Show all rooms -->
+            <button class="filter-btn active"
+                    data-filter="all"
+                    data-i18n="accFilterAll">
+                All
+            </button>
+
+            <!-- Show single rooms -->
+            <button class="filter-btn"
+                    data-filter="single"
+                    data-i18n="accFilterSingle">
+                Single Rooms
+            </button>
+
+            <!-- Show sharing rooms -->
+            <button class="filter-btn"
+                    data-filter="sharing"
+                    data-i18n="accFilterSharing">
+                Sharing Rooms
+            </button>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FILTER SECTION -->
-    <section class="filter-section">
-
-        <div class="container">
-
-            <h2>Find Your Room</h2>
-
-            <p>
-                Filter accommodation according to your preferred room type.
-            </p>
-
-            <div class="filter-buttons">
-
-                <button class="filter-btn active"
-                        data-filter="all">
-                    All
-                </button>
-
-                <button class="filter-btn"
-                        data-filter="single">
-                    Single Rooms
-                </button>
-
-                <button class="filter-btn"
-                        data-filter="sharing">
-                    Sharing Rooms
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
 
 
     <!-- ACCOMMODATION CARDS -->
@@ -62,463 +78,575 @@
             <div class="accommodation-grid">
 
 
-                <!-- ROOM 1 -->
-                <article class="accommodation-card"
-                         data-category="single"
-                         id="single">
+              <!-- ROOM 1 -->
+<article class="accommodation-card"
+         data-category="single"
+         id="single">
 
-                    <div class="room-image">
+    <div class="room-image">
 
-                        <img
-                            src="images/campus-view.jpg"
-                            alt="Campus View Residence student room">
+        <img
+            src="images/campus-view.jpg"
+            alt="Campus View Residence student room">
 
-                        <span class="room-status available">
-                            Available
-                        </span>
+        <span class="room-status available"
+              data-i18n="accAvailable">
+            Available
+        </span>
 
-                    </div>
+    </div>
 
 
-                    <div class="room-details">
+    <div class="room-details">
 
-                        <span class="room-type">
-                            Single Room
-                        </span>
+        <span class="room-type"
+              data-i18n="accSingleRoom">
+            Single Room
+        </span>
 
-                        <h3>Campus View Residence</h3>
+        <!-- Property name stays unchanged -->
+        <h3>Campus View Residence</h3>
 
-                        <p class="location">
-                            📍 Vanderbijlpark
-                        </p>
+        <!-- Place name stays unchanged -->
+        <p class="location">
+            📍 Vanderbijlpark
+        </p>
 
-                        <p class="room-description">
-                            Comfortable private student room
-                            located close to campus.
-                        </p>
+        <p class="room-description"
+           data-i18n="accRoom1Description">
+            Comfortable private student room
+            located close to campus.
+        </p>
 
 
-                        <ul class="facility-list">
+        <ul class="facility-list">
 
-                            <li>✓ Free Wi-Fi</li>
-                            <li>✓ Study Desk</li>
-                            <li>✓ Shared Kitchen</li>
-                            <li>✓ Secure Parking</li>
+            <li data-i18n="accFreeWifi">
+                ✓ Free Wi-Fi
+            </li>
 
-                        </ul>
+            <li data-i18n="accStudyDesk">
+                ✓ Study Desk
+            </li>
 
+            <li data-i18n="accSharedKitchen">
+                ✓ Shared Kitchen
+            </li>
 
-                        <div class="room-bottom">
+            <li data-i18n="accSecureParking">
+                ✓ Secure Parking
+            </li>
 
-                            <div>
+        </ul>
 
-                                <span class="price-label">
-                                    From
-                                </span>
 
-                                <p class="room-price">
-                                    R2 800
-                                    <span>/ month</span>
-                                </p>
+        <div class="room-bottom">
 
-                            </div>
+            <div>
 
+                <span class="price-label"
+                      data-i18n="accFrom">
+                    From
+                </span>
 
-                            <a href="booking.php?room=Campus+View+Residence"
-                               class="btn primary-btn">
+                <p class="room-price">
+                    R2 800
+                    <span data-i18n="accPerMonth">
+                        / month
+                    </span>
+                </p>
 
-                                Book Now
+            </div>
 
-                            </a>
 
-                        </div>
+            <a href="booking.php?room=Campus+View+Residence"
+               class="btn primary-btn"
+               data-i18n="navBook">
 
-                    </div>
+                Book Now
 
-                </article>
+            </a>
 
+        </div>
 
+    </div>
 
-                <!-- ROOM 2 -->
-                <article class="accommodation-card"
-                         data-category="sharing"
-                         id="sharing">
+</article>
 
-                    <div class="room-image">
 
-                        <img
-                            src="images/student-haven.jpg"
-                            alt="Student Haven sharing accommodation">
 
-                        <span class="room-status available">
-                            Available
-                        </span>
+              <!-- ROOM 2 -->
+<article class="accommodation-card"
+         data-category="sharing"
+         id="sharing">
 
-                    </div>
+    <div class="room-image">
 
+        <img
+            src="images/student-haven.jpg"
+            alt="Student Haven sharing accommodation">
 
-                    <div class="room-details">
+        <span class="room-status available"
+              data-i18n="accAvailable">
+            Available
+        </span>
 
-                        <span class="room-type">
-                            Sharing Room
-                        </span>
+    </div>
 
-                        <h3>Student Haven</h3>
 
-                        <p class="location">
-                            📍 Vanderbijlpark
-                        </p>
+    <div class="room-details">
 
-                        <p class="room-description">
-                            Affordable sharing accommodation
-                            suitable for students looking
-                            to reduce monthly costs.
-                        </p>
+        <span class="room-type"
+              data-i18n="accSharingRoom">
+            Sharing Room
+        </span>
 
+        <!-- Property name stays unchanged -->
+        <h3>Student Haven</h3>
 
-                        <ul class="facility-list">
+        <!-- Location stays unchanged -->
+        <p class="location">
+            📍 Vanderbijlpark
+        </p>
 
-                            <li>✓ Free Wi-Fi</li>
-                            <li>✓ Shared Bedroom</li>
-                            <li>✓ Kitchen</li>
-                            <li>✓ Laundry Area</li>
+        <p class="room-description"
+           data-i18n="accRoom2Description">
+            Affordable sharing accommodation
+            suitable for students looking
+            to reduce monthly costs.
+        </p>
 
-                        </ul>
 
+        <ul class="facility-list">
 
-                        <div class="room-bottom">
+            <li data-i18n="accFreeWifi">
+                ✓ Free Wi-Fi
+            </li>
 
-                            <div>
+            <li data-i18n="accSharedBedroom">
+                ✓ Shared Bedroom
+            </li>
 
-                                <span class="price-label">
-                                    From
-                                </span>
+            <li data-i18n="accKitchen">
+                ✓ Kitchen
+            </li>
 
-                                <p class="room-price">
-                                    R2 300
-                                    <span>/ month</span>
-                                </p>
+            <li data-i18n="accLaundryArea">
+                ✓ Laundry Area
+            </li>
 
-                            </div>
+        </ul>
 
 
-                            <a href="booking.php?room=Student+Haven"
-                               class="btn primary-btn">
+        <div class="room-bottom">
 
-                                Book Now
+            <div>
 
-                            </a>
+                <span class="price-label"
+                      data-i18n="accFrom">
+                    From
+                </span>
 
-                        </div>
+                <p class="room-price">
+                    R2 300
+                    <span data-i18n="accPerMonth">
+                        / month
+                    </span>
+                </p>
 
-                    </div>
+            </div>
 
-                </article>
 
+            <a href="booking.php?room=Student+Haven"
+               class="btn primary-btn"
+               data-i18n="navBook">
 
+                Book Now
 
-                <!-- ROOM 3 -->
-                <article class="accommodation-card"
-                         data-category="single">
+            </a>
 
-                    <div class="room-image">
+        </div>
 
-                        <img
-                            src="images/varsity-lodge.jpg"
-                            alt="Varsity Lodge private student room">
+    </div>
 
-                        <span class="room-status available">
-                            Available
-                        </span>
+</article>
 
-                    </div>
 
+              <!-- ROOM 3 -->
+<article class="accommodation-card"
+         data-category="single">
 
-                    <div class="room-details">
+    <div class="room-image">
 
-                        <span class="room-type">
-                            Single Room
-                        </span>
+        <img
+            src="images/varsity-lodge.jpg"
+            alt="Varsity Lodge private student room">
 
-                        <h3>Varsity Lodge</h3>
+        <span class="room-status available"
+              data-i18n="accAvailable">
+            Available
+        </span>
 
-                        <p class="location">
-                            📍 Vanderbijlpark
-                        </p>
+    </div>
 
-                        <p class="room-description">
-                            Modern private room with convenient
-                            facilities for university students.
-                        </p>
 
+    <div class="room-details">
 
-                        <ul class="facility-list">
+        <span class="room-type"
+              data-i18n="accSingleRoom">
+            Single Room
+        </span>
 
-                            <li>✓ Wi-Fi</li>
-                            <li>✓ Private Bedroom</li>
-                            <li>✓ Study Area</li>
-                            <li>✓ Security</li>
+        <!-- Property name stays unchanged -->
+        <h3>Varsity Lodge</h3>
 
-                        </ul>
+        <p class="location">
+            📍 Vanderbijlpark
+        </p>
 
+        <p class="room-description"
+           data-i18n="accRoom3Description">
+            Modern private room with convenient
+            facilities for university students.
+        </p>
 
-                        <div class="room-bottom">
 
-                            <div>
+        <ul class="facility-list">
 
-                                <span class="price-label">
-                                    From
-                                </span>
+            <li data-i18n="accWifi">
+                ✓ Wi-Fi
+            </li>
 
-                                <p class="room-price">
-                                    R3 000
-                                    <span>/ month</span>
-                                </p>
+            <li data-i18n="accPrivateBedroom">
+                ✓ Private Bedroom
+            </li>
 
-                            </div>
+            <li data-i18n="accStudyArea">
+                ✓ Study Area
+            </li>
 
+            <li data-i18n="accSecurity">
+                ✓ Security
+            </li>
 
-                            <a href="booking.php?room=Varsity+Lodge"
-                               class="btn primary-btn">
+        </ul>
 
-                                Book Now
 
-                            </a>
+        <div class="room-bottom">
 
-                        </div>
+            <div>
 
-                    </div>
+                <span class="price-label"
+                      data-i18n="accFrom">
+                    From
+                </span>
 
-                </article>
+                <p class="room-price">
+                    R3 000
+                    <span data-i18n="accPerMonth">
+                        / month
+                    </span>
+                </p>
 
+            </div>
+
+
+            <a href="booking.php?room=Varsity+Lodge"
+               class="btn primary-btn"
+               data-i18n="navBook">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
 
 
                 <!-- ROOM 4 -->
-                <article class="accommodation-card"
-                         data-category="sharing">
+<article class="accommodation-card"
+         data-category="sharing">
 
-                    <div class="room-image">
+    <div class="room-image">
 
-                        <img
-                            src="images/student-corner.jpg"
-                            alt="Student Corner shared accommodation">
+        <img
+            src="images/student-corner.jpg"
+            alt="Student Corner shared accommodation">
 
-                        <span class="room-status limited">
-                            Limited
-                        </span>
+        <span class="room-status limited"
+              data-i18n="accLimited">
+            Limited
+        </span>
 
-                    </div>
-
-
-                    <div class="room-details">
-
-                        <span class="room-type">
-                            Sharing Room
-                        </span>
-
-                        <h3>Student Corner</h3>
-
-                        <p class="location">
-                            📍 Vanderbijlpark
-                        </p>
-
-                        <p class="room-description">
-                            Budget-friendly student accommodation
-                            with essential facilities.
-                        </p>
+    </div>
 
 
-                        <ul class="facility-list">
+    <div class="room-details">
 
-                            <li>✓ Wi-Fi</li>
-                            <li>✓ Shared Kitchen</li>
-                            <li>✓ Study Desk</li>
-                            <li>✓ Water Included</li>
+        <span class="room-type"
+              data-i18n="accSharingRoom">
+            Sharing Room
+        </span>
 
-                        </ul>
+        <!-- Property name stays unchanged -->
+        <h3>Student Corner</h3>
 
+        <p class="location">
+            📍 Vanderbijlpark
+        </p>
 
-                        <div class="room-bottom">
-
-                            <div>
-
-                                <span class="price-label">
-                                    From
-                                </span>
-
-                                <p class="room-price">
-                                    R2 100
-                                    <span>/ month</span>
-                                </p>
-
-                            </div>
+        <p class="room-description"
+           data-i18n="accRoom4Description">
+            Budget-friendly student accommodation
+            with essential facilities.
+        </p>
 
 
-                            <a href="booking.php?room=Student+Corner"
-                               class="btn primary-btn">
+        <ul class="facility-list">
 
-                                Book Now
+            <li data-i18n="accWifi">
+                ✓ Wi-Fi
+            </li>
 
-                            </a>
+            <li data-i18n="accSharedKitchen">
+                ✓ Shared Kitchen
+            </li>
 
-                        </div>
+            <li data-i18n="accStudyDesk">
+                ✓ Study Desk
+            </li>
 
-                    </div>
+            <li data-i18n="accWaterIncluded">
+                ✓ Water Included
+            </li>
 
-                </article>
-
-
-
-                <!-- ROOM 5 -->
-                <article class="accommodation-card"
-                         data-category="single">
-
-                    <div class="room-image">
-
-                        <img
-                            src="images/blue-sky.jpg"
-                            alt="Blue Sky Residence student accommodation">
-
-                        <span class="room-status available">
-                            Available
-                        </span>
-
-                    </div>
+        </ul>
 
 
-                    <div class="room-details">
+        <div class="room-bottom">
 
-                        <span class="room-type">
-                            Single Room
-                        </span>
+            <div>
 
-                        <h3>Blue Sky Residence</h3>
+                <span class="price-label"
+                      data-i18n="accFrom">
+                    From
+                </span>
 
-                        <p class="location">
-                            📍 Vanderbijlpark
-                        </p>
+                <p class="room-price">
+                    R2 100
+                    <span data-i18n="accPerMonth">
+                        / month
+                    </span>
+                </p>
 
-                        <p class="room-description">
-                            Spacious student room designed
-                            for comfortable studying and living.
-                        </p>
-
-
-                        <ul class="facility-list">
-
-                            <li>✓ Free Wi-Fi</li>
-                            <li>✓ Private Room</li>
-                            <li>✓ Kitchen</li>
-                            <li>✓ CCTV Security</li>
-
-                        </ul>
+            </div>
 
 
-                        <div class="room-bottom">
+            <a href="booking.php?room=Student+Corner"
+               class="btn primary-btn"
+               data-i18n="navBook">
 
-                            <div>
+                Book Now
 
-                                <span class="price-label">
-                                    From
-                                </span>
+            </a>
 
-                                <p class="room-price">
-                                    R3 200
-                                    <span>/ month</span>
-                                </p>
+        </div>
 
-                            </div>
+    </div>
+
+</article>
 
 
-                            <a href="booking.php?room=Blue+Sky+Residence"
-                               class="btn primary-btn">
+               <!-- ROOM 5 -->
+<article class="accommodation-card"
+         data-category="single">
 
-                                Book Now
+    <div class="room-image">
 
-                            </a>
+        <img
+            src="images/blue-sky.jpg"
+            alt="Blue Sky Residence student accommodation">
 
-                        </div>
+        <span class="room-status available"
+              data-i18n="accAvailable">
+            Available
+        </span>
 
-                    </div>
+    </div>
 
-                </article>
 
+    <div class="room-details">
+
+        <span class="room-type"
+              data-i18n="accSingleRoom">
+            Single Room
+        </span>
+
+        <!-- Property name stays unchanged -->
+        <h3>Blue Sky Residence</h3>
+
+        <p class="location">
+            📍 Vanderbijlpark
+        </p>
+
+        <p class="room-description"
+           data-i18n="accRoom5Description">
+            Spacious student room designed
+            for comfortable studying and living.
+        </p>
+
+
+        <ul class="facility-list">
+
+            <li data-i18n="accFreeWifi">
+                ✓ Free Wi-Fi
+            </li>
+
+            <li data-i18n="accPrivateRoom">
+                ✓ Private Room
+            </li>
+
+            <li data-i18n="accKitchen">
+                ✓ Kitchen
+            </li>
+
+            <li data-i18n="accCctvSecurity">
+                ✓ CCTV Security
+            </li>
+
+        </ul>
+
+
+        <div class="room-bottom">
+
+            <div>
+
+                <span class="price-label"
+                      data-i18n="accFrom">
+                    From
+                </span>
+
+                <p class="room-price">
+                    R3 200
+                    <span data-i18n="accPerMonth">
+                        / month
+                    </span>
+                </p>
+
+            </div>
+
+
+            <a href="booking.php?room=Blue+Sky+Residence"
+               class="btn primary-btn"
+               data-i18n="navBook">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
 
 
                 <!-- ROOM 6 -->
-                <article class="accommodation-card"
-                         data-category="sharing">
+<article class="accommodation-card"
+         data-category="sharing">
 
-                    <div class="room-image">
+    <div class="room-image">
 
-                        <img
-                            src="images/campus-court.jpg"
-                            alt="Campus Court shared student room">
+        <img
+            src="images/campus-court.jpg"
+            alt="Campus Court shared student room">
 
-                        <span class="room-status available">
-                            Available
-                        </span>
+        <span class="room-status available"
+              data-i18n="accAvailable">
+            Available
+        </span>
 
-                    </div>
-
-
-                    <div class="room-details">
-
-                        <span class="room-type">
-                            Sharing Room
-                        </span>
-
-                        <h3>Campus Court</h3>
-
-                        <p class="location">
-                            📍 Vanderbijlpark
-                        </p>
-
-                        <p class="room-description">
-                            Affordable shared accommodation
-                            located within easy travelling
-                            distance of campus.
-                        </p>
+    </div>
 
 
-                        <ul class="facility-list">
+    <div class="room-details">
 
-                            <li>✓ Wi-Fi</li>
-                            <li>✓ Shared Bedroom</li>
-                            <li>✓ Kitchen</li>
-                            <li>✓ Secure Access</li>
+        <span class="room-type"
+              data-i18n="accSharingRoom">
+            Sharing Room
+        </span>
 
-                        </ul>
+        <!-- Property name stays unchanged -->
+        <h3>Campus Court</h3>
 
+        <p class="location">
+            📍 Vanderbijlpark
+        </p>
 
-                        <div class="room-bottom">
-
-                            <div>
-
-                                <span class="price-label">
-                                    From
-                                </span>
-
-                                <p class="room-price">
-                                    R2 400
-                                    <span>/ month</span>
-                                </p>
-
-                            </div>
+        <p class="room-description"
+           data-i18n="accRoom6Description">
+            Affordable shared accommodation
+            located within easy travelling
+            distance of campus.
+        </p>
 
 
-                            <a href="booking.php?room=Campus+Court"
-                               class="btn primary-btn">
+        <ul class="facility-list">
 
-                                Book Now
+            <li data-i18n="accWifi">
+                ✓ Wi-Fi
+            </li>
 
-                            </a>
+            <li data-i18n="accSharedBedroom">
+                ✓ Shared Bedroom
+            </li>
 
-                        </div>
+            <li data-i18n="accKitchen">
+                ✓ Kitchen
+            </li>
 
-                    </div>
+            <li data-i18n="accSecureAccess">
+                ✓ Secure Access
+            </li>
 
-                </article>
+        </ul>
+
+
+        <div class="room-bottom">
+
+            <div>
+
+                <span class="price-label"
+                      data-i18n="accFrom">
+                    From
+                </span>
+
+                <p class="room-price">
+                    R2 400
+                    <span data-i18n="accPerMonth">
+                        / month
+                    </span>
+                </p>
+
+            </div>
+
+
+            <a href="booking.php?room=Campus+Court"
+               class="btn primary-btn"
+               data-i18n="navBook">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
 
 
             </div>
@@ -536,12 +664,15 @@
 
             <div class="section-heading">
 
-                <h2>Compare Accommodation</h2>
+               <!-- Comparison table heading -->
+<h2 data-i18n="accCompareTitle">
+    Compare Accommodation
+</h2>
 
-                <p>
-                    Compare some of our accommodation
-                    options before making your choice.
-                </p>
+<p data-i18n="accCompareText">
+    Compare some of our accommodation
+    options before making your choice.
+</p>
 
             </div>
 
@@ -552,85 +683,84 @@
 
                     <thead>
 
-                        <tr>
+                      <tr>
 
-                            <th>Accommodation</th>
-                            <th>Room Type</th>
-                            <th>Monthly Price</th>
-                            <th>Wi-Fi</th>
-                            <th>Status</th>
+    <th data-i18n="accTableAccommodation">
+        Accommodation
+    </th>
 
-                        </tr>
+    <th data-i18n="accTableRoomType">
+        Room Type
+    </th>
 
+    <th data-i18n="accTablePrice">
+        Monthly Price
+    </th>
+
+    <th>Wi-Fi</th>
+
+    <th data-i18n="accTableStatus">
+        Status
+    </th>
+
+</tr>
                     </thead>
 
 
                     <tbody>
 
-                        <tr>
-
-                            <td>Campus View Residence</td>
-                            <td>Single</td>
-                            <td>R2 800</td>
-                            <td>Yes</td>
-                            <td>Available</td>
-
-                        </tr>
+                     <tr>
+    <td>Campus View Residence</td>
+    <td data-i18n="accTableSingle">Single</td>
+    <td>R2 800</td>
+    <td data-i18n="accYes">Yes</td>
+    <td data-i18n="accAvailable">Available</td>
+</tr>
 
 
-                        <tr>
-
-                            <td>Student Haven</td>
-                            <td>Sharing</td>
-                            <td>R2 300</td>
-                            <td>Yes</td>
-                            <td>Available</td>
-
-                        </tr>
+<tr>
+    <td>Student Haven</td>
+    <td data-i18n="accTableSharing">Sharing</td>
+    <td>R2 300</td>
+    <td data-i18n="accYes">Yes</td>
+    <td data-i18n="accAvailable">Available</td>
+</tr>
 
 
-                        <tr>
-
-                            <td>Varsity Lodge</td>
-                            <td>Single</td>
-                            <td>R3 000</td>
-                            <td>Yes</td>
-                            <td>Available</td>
-
-                        </tr>
+<tr>
+    <td>Varsity Lodge</td>
+    <td data-i18n="accTableSingle">Single</td>
+    <td>R3 000</td>
+    <td data-i18n="accYes">Yes</td>
+    <td data-i18n="accAvailable">Available</td>
+</tr>
 
 
-                        <tr>
-
-                            <td>Student Corner</td>
-                            <td>Sharing</td>
-                            <td>R2 100</td>
-                            <td>Yes</td>
-                            <td>Limited</td>
-
-                        </tr>
+<tr>
+    <td>Student Corner</td>
+    <td data-i18n="accTableSharing">Sharing</td>
+    <td>R2 100</td>
+    <td data-i18n="accYes">Yes</td>
+    <td data-i18n="accLimited">Limited</td>
+</tr>
 
 
-                        <tr>
-
-                            <td>Blue Sky Residence</td>
-                            <td>Single</td>
-                            <td>R3 200</td>
-                            <td>Yes</td>
-                            <td>Available</td>
-
-                        </tr>
+<tr>
+    <td>Blue Sky Residence</td>
+    <td data-i18n="accTableSingle">Single</td>
+    <td>R3 200</td>
+    <td data-i18n="accYes">Yes</td>
+    <td data-i18n="accAvailable">Available</td>
+</tr>
 
 
-                        <tr>
-
-                            <td>Campus Court</td>
-                            <td>Sharing</td>
-                            <td>R2 400</td>
-                            <td>Yes</td>
-                            <td>Available</td>
-
-                        </tr>
+<tr>
+    <td>Campus Court</td>
+    <td data-i18n="accTableSharing">Sharing</td>
+    <td>R2 400</td>
+    <td data-i18n="accYes">Yes</td>
+    <td data-i18n="accAvailable">Available</td>
+</tr>
 
                     </tbody>
 
@@ -644,28 +774,33 @@
 
 
 
-    <!-- HELP SECTION -->
-    <section class="cta-section">
+   <!-- ======================================
+     HELP / CALL TO ACTION SECTION
+======================================= -->
+<section class="cta-section">
 
-        <div class="container">
+    <div class="container">
 
-            <h2>Need Help Choosing?</h2>
+        <h2 data-i18n="accHelpTitle">
+            Need Help Choosing?
+        </h2>
 
-            <p>
-                Contact VarsityStay and we will help
-                you with your accommodation enquiry.
-            </p>
+        <p data-i18n="accHelpText">
+            Contact VarsityStay and we will help
+            you with your accommodation enquiry.
+        </p>
 
-            <a href="contact.php"
-               class="btn primary-btn">
+        <a href="contact.php"
+           class="btn primary-btn"
+           data-i18n="accHelpButton">
 
-                Contact Us
+            Contact Us
 
-            </a>
+        </a>
 
-        </div>
+    </div>
 
-    </section>
+</section>
 
 </main>
 
