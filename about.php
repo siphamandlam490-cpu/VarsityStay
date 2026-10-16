@@ -398,11 +398,12 @@
 
             <div class="video-card">
 
-                <iframe
-                    src="YOUR_SECOND_EMBED_LINK_HERE"
-                    title="Student Campus Life"
-                    allowfullscreen>
-                </iframe>
+               
+<video controls width="100%" poster="">
+    <source src="video/accommodation.mp4" type="video/mp4">
+    Your browser does not support video playback.
+</video>
+
 
                <h3 data-i18n="aboutVideo2Title">
     Student Campus Life
@@ -416,32 +417,26 @@
             </div>
 
 
-            <!-- ======================================
+           <!-- ======================================
                  VIDEO 3 - ACCOMMODATION
             ======================================= -->
 
             <div class="video-card">
 
-                <iframe
-                    src="YOUR_THIRD_EMBED_LINK_HERE"
-                    title="Student Accommodation Guide"
-                    allowfullscreen>
-                </iframe>
+                <video controls width="100%" style="height: 200px; object-fit: cover; border-radius: 8px; display: block;">
+                    <source src="video/accommodation-guide.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-              <h3 data-i18n="aboutVideo3Title">
-    Student Accommodation Guide
-</h3>
+                <h3 data-i18n="aboutVideo3Title">
+                    Student Accommodation Guide
+                </h3>
 
-<p data-i18n="aboutVideo3Text">
-    Learn more about choosing suitable
-    accommodation as a university student.
-</p>
+                <p data-i18n="aboutVideo3Text">
+                    Learn more about choosing suitable
+                    accommodation as a university student.
+                </p>
             </div>
-
-
-        </div>
-
-    </div>
 
 </section>
 
