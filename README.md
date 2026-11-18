@@ -1,6 +1,6 @@
 # VarsityStay
 
-VarsityStay is a Web Development 3.2 group project for a student accommodation website. It helps students browse accommodation, compare room options, submit booking enquiries, and contact VarsityStay for assistance.
+VarsityStay is a Web Development group project for a student accommodation website. It helps students browse accommodation, compare room options, submit booking enquiries, and contact VarsityStay for assistance.
 
 ## Main Features
 
