@@ -2,6 +2,8 @@
 
 VarsityStay is a Web Development group project for a student accommodation website. It helps students browse accommodation, compare room options, submit booking enquiries, and contact VarsityStay for assistance.
 
+Landlords can create an account, publish accommodation, update or remove their listings, and review booking requests submitted by students.
+
 ## Main Features
 
 - Home page with featured accommodation
@@ -41,6 +43,9 @@ VarsityStay/
 │   ├── header.php
 │   ├── footer.php
 │   └── database.php
+├── data/
+│   ├── .htaccess
+│   └── .gitignore
 │
 ├── js/
 │   └── script.js
@@ -90,7 +95,7 @@ cd VarsityStay
 
 Open XAMPP Control Panel and start Apache.
 
-Make sure the PHP `pdo_sqlite` and `sqlite3` extensions are enabled in `php.ini`, then restart Apache. The application creates `data/varsitystay.sqlite` automatically on first use. The `data` folder must be writable by Apache.
+Make sure the PHP `pdo_sqlite` extension is enabled in `php.ini`, then restart Apache. The application creates `data/varsitystay.sqlite` automatically when a page first connects to the database. The `data` folder must be writable by Apache. The database is ignored by Git and blocked from direct web access by `data/.htaccess`.
 
 ### 5. Open VarsityStay
 
@@ -151,6 +156,19 @@ http://localhost/VarsityStay/contact.php
 http://localhost/VarsityStay/booking.php
 http://localhost/VarsityStay/landlord.php
 ```
+
+## Landlord Dashboard
+
+1. Open `landlord.php` and create a landlord account with a valid email and a password of at least eight characters.
+2. Add an accommodation with its name, location, room type, monthly rent, and description.
+3. The listing will appear on the accommodation page and in the student booking form.
+4. When a student submits a booking request for that listing, sign in to view the student's contact details and move-in date. Accept or decline the request from the dashboard.
+
+Listings belong to the landlord account that created them. Passwords are stored as password hashes. Requests for the original sample accommodation cards are enquiry-only; requests for landlord-created listings are saved to SQLite and can be managed in the dashboard.
+
+## Deploying to InfinityFree
+
+Upload the project files and folders into the website's `htdocs` directory, preserving the folder structure. Include `includes/database.php`, `landlord.php`, and `data/.htaccess`. Do not upload a local `data/varsitystay.sqlite` file for a new installation; it will be created on the server when the site first uses the dashboard or booking form. Back up the SQLite database before replacing or changing the hosted site, because it contains landlord accounts, listings, and booking requests.
 
 If CSS or JavaScript changes do not appear, refresh with:
 
