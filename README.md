@@ -4,6 +4,8 @@ VarsityStay is a Web Development group project for a student accommodation websi
 
 Landlords can create an account, publish accommodation, update or remove their listings, and review booking requests submitted by students.
 
+**Live website:** [https://varsitystay.infinityfreeapp.com](https://varsitystay.infinityfreeapp.com)
+
 ## Main Features
 
 - Home page with featured accommodation
@@ -168,7 +170,7 @@ Listings belong to the landlord account that created them. Passwords are stored 
 
 ## Deploying to InfinityFree
 
-Upload the project files and folders into the website's `htdocs` directory, preserving the folder structure. Include `includes/database.php`, `landlord.php`, and `data/.htaccess`. Do not upload a local `data/varsitystay.sqlite` file for a new installation; it will be created on the server when the site first uses the dashboard or booking form. Back up the SQLite database before replacing or changing the hosted site, because it contains landlord accounts, listings, and booking requests.
+VarsityStay is hosted at [https://varsitystay.infinityfreeapp.com](https://varsitystay.infinityfreeapp.com). To deploy updates, upload the project files and folders into the website's `htdocs` directory, preserving the folder structure. Include `includes/database.php`, `landlord.php`, and `data/.htaccess`. Do not upload a local `data/varsitystay.sqlite` file for a new installation; it will be created on the server when the site first uses the dashboard or booking form. Back up the SQLite database before replacing or changing the hosted site, because it contains landlord accounts, listings, and booking requests.
 
 If CSS or JavaScript changes do not appear, refresh with:
 
