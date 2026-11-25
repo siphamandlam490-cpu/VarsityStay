@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/includes/database.php';
 
 // ======================================
 // BOOKING FORM PHP PROCESSING
@@ -190,12 +191,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     ];
 
 
+    $listingId = 0;
+    if (preg_match('/^listing:(\d+)$/', $selectedRoom, $match)) {
+        $listingId = (int)$match[1];
+        $listingCheck = $db->prepare('SELECT id FROM accommodations WHERE id=? AND available=1');
+        $listingCheck->execute([$listingId]);
+        if (!$listingCheck->fetch()) $listingId = 0;
+    }
+
     if (
         !in_array(
             $selectedRoom,
             $allowedRooms,
             true
-        )
+        ) && !$listingId
     ) {
 
        $bookingErrors[] =
@@ -222,6 +231,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (empty($bookingErrors)) {
 
+        if ($listingId) {
+            $saveBooking = $db->prepare('INSERT INTO bookings (accommodation_id, student_name, student_email, student_phone, move_date, message) VALUES (?, ?, ?, ?, ?, ?)');
+            $saveBooking->execute([$listingId, $bookingName, $bookingEmail, $bookingPhone, $moveDate, $bookingMessage]);
+        }
+
       $bookingSuccess =
     $bookingTranslations[$language]["success"];
 
@@ -236,6 +250,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
 }
+
+$landlordListings = $db->query('SELECT id, title FROM accommodations WHERE available=1 ORDER BY title')->fetchAll();
 
 
 // Load the shared website header
@@ -508,6 +524,10 @@ include 'includes/header.php';
                             >
                                 Campus View Residence
                             </option>
+
+                            <?php foreach ($landlordListings as $listing): $listingValue = 'listing:' . (int)$listing['id']; ?>
+                                <option value="<?php echo $listingValue; ?>" <?php echo $selectedRoom === $listingValue ? 'selected' : ''; ?>><?php echo htmlspecialchars($listing['title'], ENT_QUOTES, 'UTF-8'); ?></option>
+                            <?php endforeach; ?>
 
                             <option
                                 value="Student Haven"

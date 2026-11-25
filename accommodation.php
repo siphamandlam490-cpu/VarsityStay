@@ -1,4 +1,8 @@
-<?php include 'includes/header.php'; ?>
+<?php
+require_once __DIR__ . '/includes/database.php';
+$landlordListings = $db->query('SELECT * FROM accommodations WHERE available=1 ORDER BY created_at DESC')->fetchAll();
+include 'includes/header.php';
+?>
 
 <main>
 
@@ -802,6 +806,12 @@
 
 </section>
 
+<?php if ($landlordListings): ?>
+<section class="accommodation-section section"><div class="container"><h2>More student accommodation</h2><p>Listings added by local landlords.</p><div class="accommodation-grid">
+<?php foreach ($landlordListings as $listing): ?>
+<article class="accommodation-card"><div class="room-image"><div class="landlord-listing-placeholder">VarsityStay</div><span class="room-status available">Available</span></div><div class="room-details"><span class="room-type"><?= htmlspecialchars(ucfirst($listing['room_type']), ENT_QUOTES, 'UTF-8') ?> room</span><h3><?= htmlspecialchars($listing['title'], ENT_QUOTES, 'UTF-8') ?></h3><p><?= htmlspecialchars($listing['location'], ENT_QUOTES, 'UTF-8') ?></p><p class="room-description"><?= nl2br(htmlspecialchars($listing['description'], ENT_QUOTES, 'UTF-8')) ?></p><div class="room-bottom"><p class="room-price">R<?= number_format((float)$listing['price'], 2) ?> <span>/ month</span></p><a class="btn primary-btn" href="booking.php?room=listing%3A<?= (int)$listing['id'] ?>">Book Now</a></div></div></article>
+<?php endforeach; ?></div></div></section>
+<?php endif; ?>
 </main>
 
 <?php include 'includes/footer.php'; ?>

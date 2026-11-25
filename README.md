@@ -9,6 +9,8 @@ VarsityStay is a Web Development group project for a student accommodation websi
 - Accommodation listings
 - Single-room and sharing-room filtering
 - Booking enquiry form
+- Landlord account and dashboard for accommodation listings
+- SQLite storage for listings and student booking requests
 - Contact form
 - Responsive navigation
 - Shared header and footer
@@ -37,7 +39,8 @@ VarsityStay/
 │
 ├── includes/
 │   ├── header.php
-│   └── footer.php
+│   ├── footer.php
+│   └── database.php
 │
 ├── js/
 │   └── script.js
@@ -45,6 +48,7 @@ VarsityStay/
 ├── about.php
 ├── accommodation.php
 ├── booking.php
+├── landlord.php
 ├── contact.php
 └── index.php
 ```
@@ -85,6 +89,8 @@ cd VarsityStay
 ### 4. Start Apache
 
 Open XAMPP Control Panel and start Apache.
+
+Make sure the PHP `pdo_sqlite` and `sqlite3` extensions are enabled in `php.ini`, then restart Apache. The application creates `data/varsitystay.sqlite` automatically on first use. The `data` folder must be writable by Apache.
 
 ### 5. Open VarsityStay
 
@@ -143,6 +149,7 @@ http://localhost/VarsityStay/about.php
 http://localhost/VarsityStay/accommodation.php
 http://localhost/VarsityStay/contact.php
 http://localhost/VarsityStay/booking.php
+http://localhost/VarsityStay/landlord.php
 ```
 
 If CSS or JavaScript changes do not appear, refresh with:
@@ -163,16 +170,7 @@ Mobile: 430px, 390px and 360px
 
 Check navigation, headings, images, cards, forms, tables, buttons, footer, text readability, and horizontal scrolling.
 
-## Optional Database Expansion
-
-If the project is expanded later, MySQL/MariaDB can be used through XAMPP to store:
-
-- Accommodation listings
-- Booking enquiries
-- Contact enquiries
-- Availability information
-
-A database is optional and should only be added after the required Web Development 3.2 functionality is stable.
+Landlords can create an account at `landlord.php`, add or edit their accommodation, and respond to student requests. New landlord listings appear on the accommodation page and in the booking form. Booking requests for the original sample listings remain enquiry-only.
 
 ## Contributors
 

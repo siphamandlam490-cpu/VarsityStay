@@ -131,6 +131,8 @@
             </a>
         </li>
 
+        <li><a href="landlord.php">Landlords</a></li>
+
     </ul>
 
 </nav>
